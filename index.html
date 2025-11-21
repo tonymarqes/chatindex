@@ -28,16 +28,18 @@
   <button onclick="botao1()">C&A PAY</button>
 
   <script>
-    function botao1() {
-		var n = document.getElementById("iframe_sf")
-		var i = {from: "ceapay", recordTypeId: '012050000000KQqAAM', buttonId: '5730500000000HR' };
-		n.contentWindow.postMessage(JSON.stringify(i), "https://chatbot-cea.dev.cea-ecommerce.com.br"),
-		document.getElementById("iframe_sf").style.display = "block"
-    }
+function botao1() {
+	console.log('Apertou o botão 1');
+	var n = document.getElementById("iframe_sf")
+	console.log(n);
+	var i = {from: "ceapay", recordTypeId: '012050000000KQqAAM', buttonId: '5730500000000HR' };
+	n.contentWindow.postMessage(JSON.stringify(i), "https://chatbot-cea.dev.cea-ecommerce.com.br"),
+	document.getElementById("iframe_sf").style.display = "block"
+}
 
-    function botao2() {
-      alert('Você clicou no Botão 2');
-    }
+function botao2() {
+  alert('Você clicou no Botão 2');
+}
 	
 	
 var iframe = document.createElement('iframe');
