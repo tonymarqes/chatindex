@@ -45,14 +45,6 @@ function botao2() {
 var iframe = document.createElement('iframe');
 iframe.src = 'https://testchat-virid.vercel.app/script.html';
 iframe.id = "iframe_sf";
-iframe.onload = function() {
-        const iframeDoc = iframe.contentWindow.document;
-        const script = iframeDoc.createElement('script');
-		script.type = "text/javascript";
-		script.src = "https://service.force.com/embeddedservice/5.0/esw.min.js";
-        script.textContent = 'console.log("Script injected from parent!");';
-        iframeDoc.head.appendChild(script);
-};
 document.body.appendChild(iframe);
 
 
