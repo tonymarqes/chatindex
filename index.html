@@ -1,0 +1,67 @@
+<script>
+
+var iframe = document.createElement('iframe');
+iframe.src = 'https://testchat-virid.vercel.app/script.html';
+iframe.id = "iframe_sf";
+document.body.appendChild(iframe);
+
+
+function addStyle(styleString) {
+    const style = document.createElement('style');
+    style.textContent = styleString;
+    document.head.append(style);
+}
+
+
+addStyle(`
+  #iframe_sf {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    width: 400px;
+    height: 570px;
+    right: 0px;
+    border: none;
+}
+  `);
+
+</script>
+
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Botões JS</title>
+  
+<style>
+#iframe_sf {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    width: 400px;
+    height: 570px;
+    right: 0px;
+    border: none;
+}
+</style>
+  
+  
+</head>
+<body>
+
+  <button onclick="botao1()">C&A PAY</button>
+
+  <script>
+    function botao1() {
+		var n = document.getElementById("iframe_sf")
+		var i = {from: "ceapay", recordTypeId: '012050000000KQqAAM', buttonId: '5730500000000HR' };
+		n.contentWindow.postMessage(JSON.stringify(i), "https://chatbot-cea.dev.cea-ecommerce.com.br"),
+		document.getElementById("iframe_sf").style.display = "block"
+    }
+
+    function botao2() {
+      alert('Você clicou no Botão 2');
+    }
+  </script>
+</body>
+</html>
