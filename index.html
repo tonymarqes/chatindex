@@ -28,6 +28,18 @@
   <button onclick="botao1()">C&A PAY</button>
 
   <script>
+window.addEventListener("message", function(e) {
+    if (e.data.status === "loaded") {
+        console.log("iFrame carregou o script do Salesforce");
+    }
+
+    if (e.data.status === "error") {
+        console.log("iFrame NÃO conseguiu carregar o script do Salesforce");
+    }
+});
+  
+  
+  
 function botao1() {
 	console.log('Apertou o botão 1');
 	var n = document.getElementById("iframe_sf")
@@ -40,7 +52,6 @@ function botao1() {
 function botao2() {
   alert('Você clicou no Botão 2');
 }
-	
 	
 var iframe = document.createElement('iframe');
 iframe.src = 'https://testchat-virid.vercel.app/script.html';
