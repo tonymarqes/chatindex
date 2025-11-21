@@ -40,7 +40,7 @@
     }
 	
 	
-	var iframe = document.createElement('iframe');
+var iframe = document.createElement('iframe');
 iframe.src = 'https://testchat-virid.vercel.app/script.html';
 iframe.id = "iframe_sf";
 document.body.appendChild(iframe);
@@ -64,6 +64,36 @@ addStyle(`
     border: none;
 }
   `);
+  
+  
+function loadScript(src, callback) {
+  const script = document.createElement('script');
+  script.src = src;
+  script.async = true; // Load asynchronously to prevent blocking rendering
+
+  // Optional: Add onload and onerror handlers for better control
+  script.onload = () => {
+    console.log(`${src} loaded successfully.`);
+    if (callback) {
+      callback(); // Execute callback function after script loads
+    }
+  };
+  script.onerror = () => {
+    console.error(`Error loading script: ${src}`);
+  };
+
+  document.head.appendChild(script); // Append to head or body
+}
+
+// Example usage:
+loadScript('https://service.force.com/embeddedservice/5.0/esw.min.js', () => {
+  // This code will execute after 'script.js' has loaded
+  console.log('Script has been loaded and its functions are now available.');
+  // You can now call functions defined in 'script.js'
+});
+
+// You can also load without a callback if no immediate action is needed
+//loadScript('https://service.force.com/embeddedservice/5.0/esw.min.js');
 
   </script>
 </body>
