@@ -1,31 +1,5 @@
 <script>
 
-var iframe = document.createElement('iframe');
-//iframe.src = 'https://testchat-virid.vercel.app/script.html';
-iframe.src = 'https://chatbot-cea.dev.cea-ecommerce.com.br/iframe_sales_force_prod.html';
-iframe.id = "iframe_sf";
-	//teste
-document.body.appendChild(iframe);
-
-
-function addStyle(styleString) {
-    const style = document.createElement('style');
-    style.textContent = styleString;
-    document.head.append(style);
-}
-
-
-addStyle(`
-  #iframe_sf {
-    display: none;
-    position: fixed;
-    bottom: 0px;
-    width: 400px;
-    height: 570px;
-    right: 0px;
-    border: none;
-}
-  `);
 
 </script>
 
@@ -64,8 +38,33 @@ addStyle(`
     function botao2() {
       alert('Você clicou no Botão 2');
     }
+	
+	
+	var iframe = document.createElement('iframe');
+iframe.src = 'https://testchat-virid.vercel.app/script.html';
+iframe.id = "iframe_sf";
+document.body.appendChild(iframe);
+
+
+function addStyle(styleString) {
+    const style = document.createElement('style');
+    style.textContent = styleString;
+    document.head.append(style);
+}
+
+
+addStyle(`
+  #iframe_sf {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    width: 400px;
+    height: 570px;
+    right: 0px;
+    border: none;
+}
+  `);
+
   </script>
 </body>
-
 </html>
-
